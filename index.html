@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>智慧出租服務管理平台</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">智慧出租平台</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">首頁</a></li>
+        <li><a href="#about">系統介紹</a></li>
+        <li><a href="#report">問題回報</a></li>
+        <li><a href="#rental">出租服務</a></li>
+        <li><a href="#contact">聯絡資訊</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>智慧出租服務管理平台</h1>
+      <p>
+        提供系統介紹、問題回報與出租服務設定，協助使用者快速完成租借與管理流程。
+      </p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn primary">了解系統</a>
+        <a href="#rental" class="btn secondary">立即租借</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2>系統介紹</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>平台簡介</h3>
+        <p>
+          本平台整合設備出租、使用者申請與問題回報功能，
+          讓管理者與使用者都能透過網頁快速完成租借流程。
+        </p>
+      </div>
+      <div class="card">
+        <h3>主要功能</h3>
+        <ul>
+          <li>查看可出租項目與租借資訊</li>
+          <li>線上填寫出租申請</li>
+          <li>即時提交問題回報</li>
+          <li>租借費用自動試算</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>使用流程</h3>
+        <ol>
+          <li>瀏覽系統介紹與出租項目</li>
+          <li>選擇欲租借的設備或服務</li>
+          <li>填寫租借表單</li>
+          <li>系統顯示租借摘要與費用</li>
+          <li>若有問題可於問題回報區提交</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="report" class="section alt-bg">
+    <h2>問題回報</h2>
+    <form id="reportForm" class="form-box">
+      <div class="form-group">
+        <label for="reportName">姓名</label>
+        <input type="text" id="reportName" required />
+      </div>
+
+      <div class="form-group">
+        <label for="reportEmail">Email</label>
+        <input type="email" id="reportEmail" required />
+      </div>
+
+      <div class="form-group">
+        <label for="reportType">問題類型</label>
+        <select id="reportType" required>
+          <option value="">請選擇</option>
+          <option value="網頁錯誤">網頁錯誤</option>
+          <option value="帳號問題">帳號問題</option>
+          <option value="租借流程問題">租借流程問題</option>
+          <option value="設備異常">設備異常</option>
+          <option value="其他">其他</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="reportTime">發生時間</label>
+        <input type="datetime-local" id="reportTime" required />
+      </div>
+
+      <div class="form-group">
+        <label for="reportMessage">問題描述</label>
+        <textarea id="reportMessage" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" class="btn primary">送出回報</button>
+      <p id="reportResult" class="result-text"></p>
+    </form>
+  </section>
+
+  <section id="rental" class="section">
+    <h2>出租服務設定</h2>
+
+    <div class="card-container rental-cards">
+      <div class="card">
+        <h3>無人機</h3>
+        <p>適用於空拍、巡檢與研究展示。</p>
+        <p><strong>租金：</strong>NT$ 800 / 天</p>
+      </div>
+      <div class="card">
+        <h3>感測模組</h3>
+        <p>適用於環境監測、資料蒐集與實驗測試。</p>
+        <p><strong>租金：</strong>NT$ 300 / 天</p>
+      </div>
+      <div class="card">
+        <h3>攝影設備</h3>
+        <p>適用於紀錄、拍攝與專題展示。</p>
+        <p><strong>租金：</strong>NT$ 500 / 天</p>
+      </div>
+    </div>
+
+    <form id="rentalForm" class="form-box">
+      <div class="form-group">
+        <label for="renterName">租借人姓名</label>
+        <input type="text" id="renterName" required />
+      </div>
+
+      <div class="form-group">
+        <label for="renterPhone">聯絡電話</label>
+        <input type="tel" id="renterPhone" required />
+      </div>
+
+      <div class="form-group">
+        <label for="itemType">租借品項</label>
+        <select id="itemType" required>
+          <option value="">請選擇</option>
+          <option value="無人機" data-price="800">無人機 - NT$800/天</option>
+          <option value="感測模組" data-price="300">感測模組 - NT$300/天</option>
+          <option value="攝影設備" data-price="500">攝影設備 - NT$500/天</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="startDate">開始日期</label>
+        <input type="date" id="startDate" required />
+      </div>
+
+      <div class="form-group">
+        <label for="endDate">結束日期</label>
+        <input type="date" id="endDate" required />
+      </div>
+
+      <div class="form-group">
+        <label for="purpose">用途說明</label>
+        <textarea id="purpose" rows="4" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="note">備註</label>
+        <textarea id="note" rows="3"></textarea>
+      </div>
+
+      <button type="button" id="calculateBtn" class="btn secondary">計算租金</button>
+      <button type="submit" class="btn primary">送出租借申請</button>
+
+      <div id="rentalSummary" class="summary-box"></div>
+    </form>
+  </section>
+
+  <section id="contact" class="section alt-bg">
+    <h2>聯絡資訊</h2>
+    <div class="contact-box">
+      <p><strong>單位名稱：</strong>智慧出租服務中心</p>
+      <p><strong>Email：</strong>service@example.com</p>
+      <p><strong>電話：</strong>02-1234-5678</p>
+      <p><strong>服務時間：</strong>週一至週五 09:00 - 18:00</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 智慧出租服務管理平台 All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
