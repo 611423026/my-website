@@ -6,6 +6,15 @@
   <title>智慧出租服務管理平台</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
+
+<!-- 放大圖片用 -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-img" id="lightbox-img">
+</div>
+
+
 <body>
   <header class="navbar">
     <div class="logo">智慧出租平台</div>
@@ -13,12 +22,18 @@
       <ul class="nav-links">
         <li><a href="#home">首頁</a></li>
         <li><a href="#about">系統介紹</a></li>
-        <li><a href="#report">問題回報</a></li>
+        <li><a href="#function">產品功能</a></li>
+        <li><a href="https://forms.gle/3WEnKfqWMrjEgRm96">問題回報</a></li>
         <li><a href="#rental">出租服務</a></li>
         <li><a href="#contact">聯絡資訊</a></li>
+       
+       
       </ul>
     </nav>
   </header>
+
+
+
 
   <section id="home" class="hero">
     <div class="hero-content">
@@ -32,6 +47,7 @@
       </div>
     </div>
   </section>
+
 
   <section id="about" class="section">
     <h2>系統介紹</h2>
@@ -62,51 +78,95 @@
           <li>若有問題可於問題回報區提交</li>
         </ol>
       </div>
+      <div class="card">
+        <h3>產品功能</h3>
+        <p>
+          本系統致力於解決人類與野生動物間的衝突問題，
+          透過安全且低成本的影像辨識系統驅動漆彈槍進行驅離，
+          實現野生動物與農業環境的智慧共存與永續發展。
+        </p>
+      </div>
     </div>
   </section>
 
-  <section id="report" class="section alt-bg">
-    <h2>問題回報</h2>
-    <form id="reportForm" class="form-box">
-      <div class="form-group">
-        <label for="reportName">姓名</label>
-        <input type="text" id="reportName" required />
+
+  <section id="function" class="section alt-bg">
+  <h2>產品功能</h2>
+
+
+  <div class="carousel">
+
+
+    <button class="nav prev">&#10094;</button>
+
+
+    <div class="carousel-track">
+
+
+      <div class="card">
+        <img src="image/system.png" alt="系統架構圖" class="card-img">
       </div>
 
-      <div class="form-group">
-        <label for="reportEmail">Email</label>
-        <input type="email" id="reportEmail" required />
+
+      <div class="card">
+        <h3>目標影像識別子系統</h3>
+        <p>
+          本系統採用 YOLO 模型即時辨識猴子、山豬等目標動物，
+          為顧及安全性，在偵測流程中導入人類辨識機制，
+          若畫面中偵測目標動物即驅動馬達轉向，
+          若偵測到人類即停止後續驅離。
+        </p>
+
+
+        <div class="img-group">
+          <img src="image/monkey1.png">
+          <img src="image/monkey2.png">
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="reportType">問題類型</label>
-        <select id="reportType" required>
-          <option value="">請選擇</option>
-          <option value="網頁錯誤">網頁錯誤</option>
-          <option value="帳號問題">帳號問題</option>
-          <option value="租借流程問題">租借流程問題</option>
-          <option value="設備異常">設備異常</option>
-          <option value="其他">其他</option>
-        </select>
+
+      <div class="card">
+        <h3>影像辨識子系統</h3>
+        <ol>
+          <li>由相機進行 YOLO 模型辨識，即時偵測目標物</li>
+          <li>辨識後判斷對應角度</li>
+          <li>馬達旋轉至指定方向</li>
+          <li>計算水平角與俯仰角</li>
+          <li>進行角度微調</li>
+          <li>任務結束後復歸原位</li>
+        </ol>
       </div>
 
-      <div class="form-group">
-        <label for="reportTime">發生時間</label>
-        <input type="datetime-local" id="reportTime" required />
+
+      <div class="card">
+        <h3>太陽能供電子系統</h3>
+        <ul>
+        太陽能硬體規格
+          <li>單晶矽太陽能板：高效率光電轉換，提供系統核心動力。</li>
+          <li>MPPT 追蹤技術：優化充電效率，確保能量輸出最大化。</li>
+          <li>24V 儲能系統：磷酸鋰鐵電池組，支援高功率負載需求。</li>
+        智能監控指標
+          <li>電壓實時監測：追蹤電池健康狀態(SOC)，預防過充與過放。 </li>
+          <li>發電量統計：即時掌握當日累積產量與太陽能板輸出功率。</li>
+          <li>負載耗能分析：監控後端設備(MPPT LOAD)電流，確保能源分配穩定。</li>
+        </ul>
       </div>
+     
+    </div>
+   
+    <button class="nav next">&#10095;</button>
+    <div class="dots"></div>
+  </div>
+</section>
 
-      <div class="form-group">
-        <label for="reportMessage">問題描述</label>
-        <textarea id="reportMessage" rows="5" required></textarea>
-      </div>
 
-      <button type="submit" class="btn primary">送出回報</button>
-      <p id="reportResult" class="result-text"></p>
-    </form>
-  </section>
 
-  <section id="rental" class="section">
+
+  <section id="rental" class="section alt-bg">
     <h2>出租服務設定</h2>
+
+
+
 
     <div class="card-container rental-cards">
       <div class="card">
@@ -124,18 +184,12 @@
         <p>適用於紀錄、拍攝與專題展示。</p>
         <p><strong>租金：</strong>NT$ 500 / 天</p>
       </div>
+   
     </div>
 
-    <form id="rentalForm" class="form-box">
-      <div class="form-group">
-        <label for="renterName">租借人姓名</label>
-        <input type="text" id="renterName" required />
-      </div>
 
-      <div class="form-group">
-        <label for="renterPhone">聯絡電話</label>
-        <input type="tel" id="renterPhone" required />
-      </div>
+    <form id="rentalForm" class="form-box">
+
 
       <div class="form-group">
         <label for="itemType">租借品項</label>
@@ -147,32 +201,35 @@
         </select>
       </div>
 
+
+
+
       <div class="form-group">
         <label for="startDate">開始日期</label>
         <input type="date" id="startDate" required />
       </div>
+
 
       <div class="form-group">
         <label for="endDate">結束日期</label>
         <input type="date" id="endDate" required />
       </div>
 
-      <div class="form-group">
-        <label for="purpose">用途說明</label>
-        <textarea id="purpose" rows="4" required></textarea>
+
+      <div class="btn-group">
+        <button type="button" id="calculateBtn" class="btn secondary">計算租金</button>
+
+
+        <a href="https://forms.gle/VckNgRwxNE67AePe6" target="_blank" class="btn primary">
+            租借申請
+        </a>
       </div>
-
-      <div class="form-group">
-        <label for="note">備註</label>
-        <textarea id="note" rows="3"></textarea>
-      </div>
-
-      <button type="button" id="calculateBtn" class="btn secondary">計算租金</button>
-      <button type="submit" class="btn primary">送出租借申請</button>
-
       <div id="rentalSummary" class="summary-box"></div>
     </form>
   </section>
+
+
+
 
   <section id="contact" class="section alt-bg">
     <h2>聯絡資訊</h2>
@@ -184,10 +241,19 @@
     </div>
   </section>
 
+
+
+
   <footer class="footer">
     <p>© 2026 智慧出租服務管理平台 All Rights Reserved.</p>
   </footer>
 
+
+
+
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
