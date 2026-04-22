@@ -4,15 +4,9 @@
   box-sizing: border-box;
 }
 
-
-
-
 html {
   scroll-behavior: smooth;
 }
-
-
-
 
 body {
   font-family: "Microsoft JhengHei", Arial, sans-serif;
@@ -21,9 +15,7 @@ body {
   color: #222;
 }
 
-
-
-
+/* ===== Navbar ===== */
 .navbar {
   position: sticky;
   top: 0;
@@ -37,16 +29,10 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-
-
-
 .logo {
   font-size: 1.3rem;
   font-weight: bold;
 }
-
-
-
 
 .nav-links {
   list-style: none;
@@ -54,25 +40,17 @@ body {
   gap: 22px;
 }
 
-
-
-
 .nav-links a {
   color: white;
   text-decoration: none;
   font-weight: 500;
 }
 
-
-
-
 .nav-links a:hover {
   color: #93c5fd;
 }
 
-
-
-
+/* ===== Hero ===== */
 .hero {
   min-height: 88vh;
   display: flex;
@@ -82,15 +60,9 @@ body {
   background: linear-gradient(135deg, #dbeafe, #eff6ff);
 }
 
-
-
-
 .hero-content {
   max-width: 800px;
 }
-
-
-
 
 .hero h1 {
   font-size: 2.8rem;
@@ -98,37 +70,25 @@ body {
   color: #0f172a;
 }
 
-
-
-
 .hero p {
   font-size: 1.1rem;
   color: #334155;
   margin-bottom: 28px;
 }
 
-
-
-
 .hero-buttons {
   display: flex;
   justify-content: center;
   gap: 16px;
-  justify-content: center;
   flex-wrap: wrap;
 }
 
-
-
-
+/* ===== Section ===== */
 .section {
   padding: 80px 20px;
   max-width: 1200px;
   margin: auto;
 }
-
-
-
 
 .section h2 {
   text-align: center;
@@ -137,9 +97,6 @@ body {
   color: #0f172a;
 }
 
-
-
-
 .alt-bg {
   background-color: #eef4ff;
   max-width: 100%;
@@ -147,50 +104,37 @@ body {
   padding-right: 20px;
 }
 
-
-
-
+/* ===== 卡片區塊（重點修正） ===== */
 .card-container {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-
-
+.rental-cards {
+  grid-template-columns: repeat(3, 1fr);
+}
 
 .card {
-  flex: 1;        /* ⭐ 平均分配 */
-  min-width: 0;
+  width: 100%;
+  max-width: none;
   background: white;
-  width: 320px;
   padding: 24px;
   border-radius: 14px;
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
 }
-
-
-
 
 .card h3 {
   margin-bottom: 12px;
   color: #1d4ed8;
 }
 
-
-
-
 .card ul,
 .card ol {
   padding-left: 20px;
 }
 
-
-
-
+/* ===== 表單 ===== */
 .form-box {
   max-width: 760px;
   margin: 30px auto;
@@ -200,15 +144,9 @@ body {
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
 }
 
-
-
-
 .form-group {
   margin-bottom: 18px;
 }
-
-
-
 
 .form-group label {
   display: block;
@@ -216,9 +154,6 @@ body {
   font-weight: bold;
   color: #1e293b;
 }
-
-
-
 
 .form-group input,
 .form-group select,
@@ -230,9 +165,6 @@ body {
   font-size: 1rem;
 }
 
-
-
-
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -240,9 +172,7 @@ body {
   border-color: #2563eb;
 }
 
-
-
-
+/* ===== 按鈕 ===== */
 .btn {
   display: inline-block;
   padding: 12px 22px;
@@ -255,61 +185,35 @@ body {
   margin-top: 8px;
 }
 
-
-
-
 .primary {
   background: #2563eb;
   color: white;
 }
 
-
-
-
 .primary:hover {
   background: #1d4ed8;
 }
-
-
-
 
 .secondary {
   background: #e2e8f0;
   color: #0f172a;
 }
 
-
-
-
 .secondary:hover {
   background: #cbd5e1;
 }
 
-
-
-
-.result-text {
-  margin-top: 16px;
-  font-weight: bold;
-  color: #15803d;
-}
-
-
-
-
+/* ===== 租借摘要 ===== */
 .summary-box {
   display: none;
-  margin-top: 24px;
-  padding: 18px;
-  background: #f8fafc;
+  margin-top: 20px;
+  padding: 15px;
+  background: #f1f5f9;
   border-left: 5px solid #2563eb;
   border-radius: 10px;
-  color: #1e293b;
 }
 
-
-
-
+/* ===== 聯絡資訊 ===== */
 .contact-box {
   max-width: 700px;
   margin: auto;
@@ -319,9 +223,7 @@ body {
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
 }
 
-
-
-
+/* ===== Footer ===== */
 .footer {
   text-align: center;
   background: #0f172a;
@@ -330,70 +232,25 @@ body {
   margin-top: 40px;
 }
 
-
-
-
-@media (max-width: 900px) {
-  .navbar {
-    flex-direction: column;
-    gap: 14px;
-    padding: 20px;
-  }
-
-
-
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 14px;
-  }
-
-
-
-
-  .hero h1 {
-    font-size: 2.1rem;
-  }
-
-
-
-
-  .card {
-    width: 100%;
-    max-width: 500px;
-  }
-}
-
-
-/* 圖片大小 */
+/* ===== 圖片 ===== */
 .card-img {
   width: 100%;
   border-radius: 10px;
 }
 
-
-/* 兩張圖片排版 */
+/* 圖片群組（桌機並排） */
 .img-group {
   display: flex;
   gap: 10px;
   margin-top: 10px;
 }
 
-
 .img-group img {
   width: 50%;
   border-radius: 8px;
 }
 
-
-/* 點擊圖片游標 */
-.card img {
-  cursor: pointer;
-}
-
-
-/* Lightbox 背景 */
+/* ===== Lightbox ===== */
 .lightbox {
   display: none;
   position: fixed;
@@ -406,8 +263,6 @@ body {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-
-/* 放大圖片 */
 .lightbox-img {
   margin: auto;
   display: block;
@@ -416,8 +271,6 @@ body {
   border-radius: 10px;
 }
 
-
-/* 關閉按鈕 */
 .close {
   position: absolute;
   top: 20px;
@@ -428,18 +281,18 @@ body {
   cursor: pointer;
 }
 
-
+/* ===== 輪播 ===== */
 #function .carousel {
   position: relative;
   overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
 }
-
 
 #function .carousel-track {
   display: flex;
-  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform 0.6s ease;
 }
-
 
 #function .card {
   min-width: 100%;
@@ -447,8 +300,6 @@ body {
   margin: auto;
 }
 
-
-/* 按鈕 */
 #function .nav {
   position: absolute;
   top: 50%;
@@ -460,54 +311,16 @@ body {
   padding: 10px 14px;
   cursor: pointer;
   border-radius: 50%;
-}
-
-
-#function .nav {
   z-index: 10;
 }
 
+#function .prev { left: 0; }
+#function .next { right: 0; }
 
-#function .prev {
-  left: 0;
-}
-
-
-#function .next {
-  right: 0;
-}
-/* 圖片 */
-.card-img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-
-.img-group {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-
-.img-group img {
-  width: 50%;
-  border-radius: 8px;
-}
-
-
-#function .carousel {
-  max-width: 800px;   /* 控制整體大小 */
-  margin: 0 auto;     /* 置中 */
-}
-
-
-/*圓點*/
 #function .dots {
   text-align: center;
   margin-top: 10px;
 }
-
 
 #function .dots span {
   display: inline-block;
@@ -519,23 +332,43 @@ body {
   cursor: pointer;
 }
 
-
 #function .dots .active {
   background: #2563eb;
 }
 
+/* ===== 手機版（關鍵） ===== */
+@media (max-width: 768px) {
 
-.summary-box {
-  margin-top: 20px;
-  padding: 15px;
-  background: #f1f5f9;
-  border-left: 5px solid #2563eb;
-  border-radius: 10px;
+  .navbar {
+    flex-direction: column;
+    gap: 14px;
+    padding: 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .card {
+    max-width: 100%;
+  }
+
+  /* ⭐ 圖片改直排 */
+  .img-group {
+    flex-direction: column;
+  }
+
+  .img-group img {
+    width: 100%;
+  }
 }
-
-
-
-
-
-
-
